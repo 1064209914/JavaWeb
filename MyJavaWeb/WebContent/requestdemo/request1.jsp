@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<form action="request2.jsp" method="post">
-		<input type="text" name="name" /><br/>
-		<input type="checkbox" name="xingqu" value="读书" />读书 
+<h1>jsp内置对象——request对象</h1><hr/>
+		<form action="responsedemo.jsp" method="post">
+		书名：<input type="text" name="name" /><br/>
+		数量：<input type="checkbox" name="xingqu" value="读书" />读书 
 		<input type="checkbox" name="xingqu" value="音乐" />音乐
-		<input type="checkbox" name="xingqu" value="sw" />上网
-		<input type="checkbox" name="xingqu" value="旅游" />旅游<br/>
-		<input type="submit" />
+		<input type="checkbox" name="xingqu" value="上网" />上网
+		<input type="checkbox" name="xingqu" checked="checked" value="旅游" />旅游<br/>
+		&nbsp;&nbsp;&nbsp;<input type="submit" />
 		
 		</form>
 </body>

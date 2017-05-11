@@ -7,17 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-		${name }
-		<%
-			 request.setCharacterEncoding("UTF-8");
-			String userName= request.getParameter("name");
-		out.print(userName+"<br/>");
-			String[] hoppys= request.getParameterValues("xingqu");
-			out.print("爱好"+":");
-				for(int i=0;i<hoppys.length;i++){
-					out.print(hoppys[i]+"&nbsp;&nbsp;");
-				}
-		
-		%>
+		<%=this.getServletContext().getRealPath("") %>
 </body>
 </html>

@@ -7,17 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-		${name }
+<h1>response对象</h1><hr/>
 		<%
-			 request.setCharacterEncoding("UTF-8");
-			String userName= request.getParameter("name");
-		out.print(userName+"<br/>");
-			String[] hoppys= request.getParameterValues("xingqu");
-			out.print("爱好"+":");
-				for(int i=0;i<hoppys.length;i++){
-					out.print(hoppys[i]+"&nbsp;&nbsp;");
-				}
-		
+				//重定向  客户端跳转
+				//response.sendRedirect("request2.jsp");
+				//请求转发
+				request.getRequestDispatcher("request2.jsp");
 		%>
 </body>
 </html>

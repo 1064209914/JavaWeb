@@ -8,11 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
+	<%	
 		 SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss"); 
-		Date date=(Date)session.getAttribute("time");
-			 String s=sf.format(date); 
+		/* Date da=(Date)session.getAttribute("time"); */
+		 Date da=new Date();
+			
 	%>
-	当前时间：<%=s %>
+	sessionID编号：<%=session.getId() %><br/>
+	当前时间：<%=sf.format(da) %>
 </body>
 </html>
