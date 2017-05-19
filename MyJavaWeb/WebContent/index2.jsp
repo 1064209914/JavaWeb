@@ -19,5 +19,6 @@
 				</c:forEach> </tr>
 				<tr> <td>自我介绍</td> <td> ${user.getJieshao() } </tr>
 			</table>
+	
 </body>
 </html>

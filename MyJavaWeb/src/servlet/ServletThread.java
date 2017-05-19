@@ -14,10 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ServletThread
  */
-@WebServlet("/servlet/ServletThread")
+@WebServlet(urlPatterns="/servlet/ServletThread",
+	name="ServletThread"
+		)
 public class ServletThread extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private  final Lock lock=new ReentrantLock();
+	//private  final Lock lock=new ReentrantLock();		//能用成员变量最好用成员变量  快点
 	 String name;
        
     /**
@@ -33,14 +35,14 @@ public class ServletThread extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");// 设置文档类型及字符集
-		lock.lock();
+		//lock.lock();
 		PrintWriter out = response.getWriter();// 得到输出字符输出流
 		out.println("<HTML>");
 		out.println("<HEAD><TITLE>Servlet线程安全问题</TITLE></HEAD>");
 		out.println("<BODY>");
-		String username = request.getParameter("in1");
-		// String name = new String(username.getBytes("iso-8859-1"), "UTF-8");
-		name = new String(username.getBytes("iso-8859-1"), "UTF-8");
+		 String username = request.getParameter("in1");
+		 String name = new String(username.getBytes("iso-8859-1"), "UTF-8");
+		//name = new String(username.getBytes("iso-8859-1"), "UTF-8");
 
 		try {
 			Thread.sleep(10000); // 休眠10秒
@@ -51,7 +53,7 @@ public class ServletThread extends HttpServlet {
 		out.println("</BODY>");
 		out.println("</HTML>");
 		out.close();// 关闭输出流
-		lock.unlock();
+		//lock.unlock();
 	}
 			
 
