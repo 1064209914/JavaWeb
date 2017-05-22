@@ -6,11 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 			<h1>个人资料</h1>
-			<table>
-			<tr><tr> <td>姓名</td> <td>${user.getUserName()}</td> </tr>
+			<table  border="">
+			<tr><tr> <td>姓名</td> <td style="width: 200px;height: 20px;">${user.getUserName()}</td> </tr>
 				<tr> <td>年龄</td> <td> ${user.getUserAge() }</td> </tr>
 				<tr> <td>生日</td> <td> ${user.getBirthday() }</td> </tr>
 				<tr> <td>性别</td> <td>${user.getSex() } </td> </tr>

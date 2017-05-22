@@ -22,6 +22,7 @@ public class FilterRequest1 implements Filter {
      */
     public FilterRequest1() {
         // TODO Auto-generated constructor stub
+    	System.out.println("filter 构造方法执行了");
     }
 
 	/**
@@ -50,6 +51,7 @@ public class FilterRequest1 implements Filter {
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
+		System.out.println("初始化方法");
 	}
 
 }
