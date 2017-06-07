@@ -1,4 +1,3 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,14 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>response对象</h1><hr/>
-		<%
-				//重定向  客户端跳转
-				//response.sendRedirect("request2.jsp");
-				//请求转发
-				//request.getRequestDispatcher("request2.jsp");
-				response.setHeader("refresh", "1");
-				out.print(new Date());
-		%>
+			<%
+				String  s=(String)session.getAttribute("userName");
+				%>
+		<h1 style="position: absolute;">欢迎 <%=s %>&nbsp;&nbsp;&nbsp;&nbsp;当前人数：&nbsp;${count}
+		</h1>
+			<a href="../login/logout.jsp" style="position: absolute; right: 200px;">注销</a>	
+				
 </body>
 </html>

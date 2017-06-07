@@ -11,8 +11,10 @@ body {
 		sans-serif;
 	font-size: 12px;
 	color: #fff;
-	height: 100%;
-	width: 100%;
+	background-size: cover;			/* 左右填充 */
+	background-repeat: no-repeat;		/* 是否重复 */
+	background-attachment: fixed;		
+	z-index: auto;
 }
 
 * {
@@ -52,7 +54,7 @@ input[type=text], input[type=password] {
 	height: 42px;
 	margin-top: 25px;
 	padding: 0px 15px;
-	border: 1px solid rgba(255, 255, 255, .15);
+	border: 1px inset;
 	border-radius: 6px;
 	color: #fff;
 	letter-spacing: 2px;
@@ -86,20 +88,24 @@ input:focus {
 <body background="./images/2.jpg">
 	<div class="login-box">
 		<h1>个人主页登录</h1>
-		<form method="post" action="./login/loginreceive.jsp">
+		<form method="post" action=" <%=request.getContextPath() %>/servlet/Login"  >
 			<div class="name">
-				<label>管理员账号：</label> <input type="text" name="" id="" tabindex="1" />
+				<label>管理员账号：</label> <input type="text" name="userName" id=""
+					tabindex="1" required="required" />
 			</div>
 			<div class="password">
-				<label>密 码：</label> <input type="password" name="" maxlength="16"
-					id="" tabindex="2" />
+				<label>密 码：</label> <input type="password" name="passWord" maxlength="16"
+					id="" tabindex="2" required="required" />
 			</div>
 			<div class="login">
 				<button type="submit" tabindex="5"
 					style="width: 307px; margin-left: 100px;">登录</button>
+				</div>
+			<div class="login">
+				<h2><a href="register.jsp" style="margin-left: 330px;">点击注册</a></h2>
+				
 			</div>
 		</form>
 	</div>
-<img  src="responsedemo2.jsp">
 </body>
 </html>

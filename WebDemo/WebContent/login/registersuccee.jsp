@@ -1,4 +1,3 @@
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,14 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>response对象</h1><hr/>
-		<%
-				//重定向  客户端跳转
-				//response.sendRedirect("request2.jsp");
-				//请求转发
-				//request.getRequestDispatcher("request2.jsp");
-				response.setHeader("refresh", "1");
-				out.print(new Date());
-		%>
+<h1>恭喜你！！！注册成功。。。</h1>
+<h1> <a href="../index.jsp">点击登录</a> </h1>
 </body>
 </html>
