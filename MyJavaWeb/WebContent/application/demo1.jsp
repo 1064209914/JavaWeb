@@ -15,6 +15,7 @@
 				application.setAttribute("age", "20");	
 			%>
 			名字：<%=application.getAttribute("name") %><br>
+			${age}<br/>
 		application：<%
 			Enumeration es =application.getAttributeNames();
 				while(es.hasMoreElements()){

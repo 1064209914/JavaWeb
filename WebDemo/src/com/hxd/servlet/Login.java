@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hxd.bean.User;
 import com.hxd.dao.UserDao;
 import com.hxd.factory.UserDaoFactory;
 
@@ -30,10 +31,21 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String name=request.getParameter("userName");
-			UserDao userDao= UserDaoFactory.getEmployeeDAOInstance();
-			;
-			if (userDao.getUserByName(name).equals(request.getParameter("passWord"))) {
-					request.getRequestDispatcher("../login/registerfalse.jsp").forward(request, response);
+			if (null!=name||"".equals(name)) {
+				UserDao userDao= UserDaoFactory.getEmployeeDAOInstance();
+				User user =userDao.getUserByName(name);
+				if (null!=user) {
+					String pw1= user.getPassword();
+					if (null!=pw1||"".equals(pw1)) {
+						if (pw1.equals(request.getParameter("passWord"))) {
+							request.getRequestDispatcher("/login/welcome.jsp").forward(request, response);
+						request.getSession().setAttribute("user",user);
+						}
+					
+				}
+					
+				}
+				
 			}
 			
 	}
