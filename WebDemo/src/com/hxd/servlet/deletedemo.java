@@ -12,16 +12,16 @@ import com.hxd.dao.UserDao;
 import com.hxd.factory.UserDaoFactory;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class deletedemo
  */
-@WebServlet("/servlet/Login")
-public class Login extends HttpServlet {
+@WebServlet("/servlet/deletedemo")
+public class deletedemo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public deletedemo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,31 +30,17 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			String name=request.getParameter("userName");
-			if (null!=name||"".equals(name)) {
-				UserDao userDao= UserDaoFactory.getEmployeeDAOInstance();
-				User user =userDao.getUserByName(name);
-				if (null!=user) {
-					String pw1= user.getPassword();
-					if (null!=pw1||"".equals(pw1)) {
-						if (pw1.equals(request.getParameter("passWord"))) {
-							request.getRequestDispatcher("/login/welcome.jsp").forward(request, response);
-						request.getSession().setAttribute("user",user);
-						}
-					
-				}
-					
-				}
-				
-			}
-			
+				User user=(User) request.getSession().getAttribute("user");
+				UserDao userDao=UserDaoFactory.getEmployeeDAOInstance();
+				userDao.deleteUser(user);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				doGet(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
